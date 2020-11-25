@@ -3,13 +3,11 @@
 //
 
 #include <iostream>
-#include "Log.h"
 
-void warning(std::string &msg){
+extern void warning(std::string &msg){
     time_t now{time(0)};
     tm *ltm = localtime(&now);
 
-    std::cout << ltm->tm_year << '-'<< ltm->tm_mon << '-' << ltm->tm_mday<< ' '
-    << ltm->tm_hour << ':'<< ltm->tm_min << ':'<< ltm->tm_sec << " ---> "
-    << msg  << std::endl;
+    printf("%d-%d-%d %d:%d:%d --【warning】-- %s",(ltm->tm_year+1900),ltm->tm_mon,ltm->tm_mday,ltm->tm_hour,
+            ltm-> tm_min, ltm->tm_sec,msg.c_str());
 }

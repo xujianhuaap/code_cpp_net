@@ -15,20 +15,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b17747a-09c9-428e-96ea-5add19ca9a47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Config.h.in" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/libtools.a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/Log.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tools/Log.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/Net.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/READ.md" beforeDir="false" afterPath="$PROJECT_DIR$/READ.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libtools.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libtools.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/client/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/Log.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/Log.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tools/Log.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/Log.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +63,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/include" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/client" />
@@ -115,7 +113,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606053867571</updated>
       <workItem from="1606053872088" duration="3361000" />
-      <workItem from="1606281715536" duration="16574000" />
+      <workItem from="1606281715536" duration="25878000" />
     </task>
     <servers />
   </component>
@@ -126,34 +124,38 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="141" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606294700371">
+    <state x="141" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606306472127">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="141" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1606294700371" />
+    <state x="141" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1606306472127" />
+    <state x="416" y="111" width="524" height="503" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606304650059">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="416" y="111" width="524" height="503" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606304650059" />
     <state x="381" y="85" width="593" height="554" key="#tools" timestamp="1606301063150">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="381" y="85" width="593" height="554" key="#tools/0.0.1366.728@0.0.1366.728" timestamp="1606301063150" />
-    <state x="466" y="121" width="424" height="483" key="FileChooserDialogImpl" timestamp="1606286582032">
+    <state x="466" y="121" width="424" height="483" key="FileChooserDialogImpl" timestamp="1606306635518">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="466" y="121" width="424" height="483" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606286582032" />
-    <state width="1318" height="166" key="GridCell.Tab.0.bottom" timestamp="1606301189510">
+    <state x="466" y="121" width="424" height="483" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606306635518" />
+    <state width="1318" height="164" key="GridCell.Tab.0.bottom" timestamp="1606310948521">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1318" height="166" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606301189510" />
-    <state width="1318" height="166" key="GridCell.Tab.0.center" timestamp="1606301189509">
+    <state width="1318" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606310948521" />
+    <state width="1318" height="164" key="GridCell.Tab.0.center" timestamp="1606310948520">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1318" height="166" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606301189509" />
-    <state width="1318" height="166" key="GridCell.Tab.0.left" timestamp="1606301189509">
+    <state width="1318" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606310948520" />
+    <state width="1318" height="164" key="GridCell.Tab.0.left" timestamp="1606310948519">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1318" height="166" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606301189509" />
-    <state width="1318" height="166" key="GridCell.Tab.0.right" timestamp="1606301189509">
+    <state width="1318" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606310948519" />
+    <state width="1318" height="164" key="GridCell.Tab.0.right" timestamp="1606310948521">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1318" height="166" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606301189509" />
+    <state width="1318" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606310948521" />
     <state x="461" y="74" width="434" height="577" key="RollbackChangesDialog" timestamp="1606286824257">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

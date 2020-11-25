@@ -4,5 +4,5 @@
 
 #ifndef CODE_CPP_NET_LOG_H
 #define CODE_CPP_NET_LOG_H
-void warning(std::string &msg);
+extern void warning(std::string &msg);
 #endif //CODE_CPP_NET_LOG_H

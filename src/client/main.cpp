@@ -8,8 +8,8 @@
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
+#include <Net.h>
 #include <config.h>
-#include "../tools/Log.h"
 
 static auto stop = false;
 static void handle_term(int sig){
@@ -23,10 +23,10 @@ static void handle_term(int sig){
  * @return
  */
 int main(int argc, char* argv[]) {
-    std::cout << "Hello, World!" << PROJECT_VERSION << std::endl;
+    std::cout << "Hello, World! Project Version" << PROJECT_VERSION << std::endl;
     signal(SIGTERM, handle_term);
     if(argc < 3){
-        std::string msg = "usage %s ip_address port_number backlog \n";
+        std::string msg = "input parameter count < 3";
         warning(msg);
         return 1;
     }
