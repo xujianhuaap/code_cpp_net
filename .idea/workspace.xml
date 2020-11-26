@@ -15,17 +15,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b17747a-09c9-428e-96ea-5add19ca9a47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/include/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/Net.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/libtools.so" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/libtools.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libtools.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/project.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/client/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tools/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/Log.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/Log.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/Log.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/Log.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +54,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -96,11 +91,23 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.code_cpp_net" />
       <item itemvalue="CMake Application.client" />
+      <item itemvalue="CMake Application.code_cpp_net" />
       <item itemvalue="CMake Application.server" />
       <item itemvalue="CMake Application.tools" />
     </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -114,6 +121,7 @@
       <updated>1606053867571</updated>
       <workItem from="1606053872088" duration="3361000" />
       <workItem from="1606281715536" duration="25878000" />
+      <workItem from="1606353428295" duration="8249000" />
     </task>
     <servers />
   </component>
@@ -128,45 +136,56 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="141" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1606306472127" />
+    <state x="521" y="299" width="870" height="467" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606358176023">
+      <screen x="0" y="0" width="1920" height="1053" />
+    </state>
+    <state x="521" y="299" width="870" height="467" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1053@0.0.1920.1053" timestamp="1606358176023" />
     <state x="416" y="111" width="524" height="503" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606304650059">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="416" y="111" width="524" height="503" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606304650059" />
-    <state x="381" y="85" width="593" height="554" key="#tools" timestamp="1606301063150">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="536" y="123" width="891" height="709" key="#tools" timestamp="1606356734645">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="381" y="85" width="593" height="554" key="#tools/0.0.1366.728@0.0.1366.728" timestamp="1606301063150" />
+    <state x="536" y="123" width="891" height="709" key="#tools/0.0.1920.1053@0.0.1920.1053" timestamp="1606356734645" />
     <state x="466" y="121" width="424" height="483" key="FileChooserDialogImpl" timestamp="1606306635518">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="466" y="121" width="424" height="483" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606306635518" />
-    <state width="1318" height="164" key="GridCell.Tab.0.bottom" timestamp="1606310948521">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1846" height="244" key="GridCell.Tab.0.bottom" timestamp="1606365763076">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1318" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606310948521" />
-    <state width="1318" height="164" key="GridCell.Tab.0.center" timestamp="1606310948520">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1846" height="244" key="GridCell.Tab.0.bottom/0.0.1920.1053@0.0.1920.1053" timestamp="1606365763076" />
+    <state width="1846" height="244" key="GridCell.Tab.0.center" timestamp="1606365763076">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1318" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606310948520" />
-    <state width="1318" height="164" key="GridCell.Tab.0.left" timestamp="1606310948519">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1846" height="244" key="GridCell.Tab.0.center/0.0.1920.1053@0.0.1920.1053" timestamp="1606365763076" />
+    <state width="1846" height="244" key="GridCell.Tab.0.left" timestamp="1606365763075">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1318" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606310948519" />
-    <state width="1318" height="164" key="GridCell.Tab.0.right" timestamp="1606310948521">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1846" height="244" key="GridCell.Tab.0.left/0.0.1920.1053@0.0.1920.1053" timestamp="1606365763075" />
+    <state width="1846" height="244" key="GridCell.Tab.0.right" timestamp="1606365763076">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state width="1318" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606310948521" />
+    <state width="1846" height="244" key="GridCell.Tab.0.right/0.0.1920.1053@0.0.1920.1053" timestamp="1606365763076" />
     <state x="461" y="74" width="434" height="577" key="RollbackChangesDialog" timestamp="1606286824257">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="461" y="74" width="434" height="577" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1606286824257" />
-    <state x="359" y="190" key="com.intellij.ide.util.TipDialog" timestamp="1606053872092">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="505" y="275" key="com.intellij.ide.util.TipDialog" timestamp="1606377752979">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="359" y="190" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1606053872092" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1606295669631">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="505" y="275" key="com.intellij.ide.util.TipDialog/0.0.1920.1053@0.0.1920.1053" timestamp="1606377752979" />
+    <state x="486" y="71" width="945" height="981" key="search.everywhere.popup" timestamp="1606357394312">
+      <screen x="0" y="0" width="1920" height="1053" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1606295669631" />
+    <state x="486" y="71" width="945" height="981" key="search.everywhere.popup/0.0.1920.1053@0.0.1920.1053" timestamp="1606357394312" />
   </component>
 </project>
