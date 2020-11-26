@@ -2,25 +2,24 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="code_cpp_net" targetName="server" />
       <config projectName="code_cpp_net" targetName="tools" />
+      <config projectName="code_cpp_net" targetName="libtools" />
       <config projectName="code_cpp_net" targetName="client" />
       <config projectName="code_cpp_net" targetName="code_cpp_net" />
     </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b17747a-09c9-428e-96ea-5add19ca9a47" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/libtools.so" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libtools.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libtools.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libtools.so" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libtools.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CMakeLists.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/client/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/client/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tools/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/tools/CMakeLists.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +68,7 @@
       <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.code_cpp_net">
+  <component name="RunManager" selected="CMake Application.client">
     <configuration name="client" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="code_cpp_net" TARGET_NAME="client" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="code_cpp_net" RUN_TARGET_NAME="client">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -80,7 +79,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="server" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="code_cpp_net" TARGET_NAME="server" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="code_cpp_net" RUN_TARGET_NAME="server">
+    <configuration name="libtools" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="code_cpp_net" TARGET_NAME="libtools" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -91,9 +90,9 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.client" />
       <item itemvalue="CMake Application.code_cpp_net" />
-      <item itemvalue="CMake Application.server" />
+      <item itemvalue="CMake Application.client" />
+      <item itemvalue="CMake Application.libtools" />
       <item itemvalue="CMake Application.tools" />
     </list>
   </component>
@@ -136,9 +135,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="141" y="21" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1606306472127" />
-    <state x="521" y="299" width="870" height="467" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606358176023">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state x="371" y="207" width="870" height="467" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606399408126">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="371" y="207" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1606399408126" />
     <state x="521" y="299" width="870" height="467" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1053@0.0.1920.1053" timestamp="1606358176023" />
     <state x="416" y="111" width="524" height="503" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606304650059">
       <screen x="0" y="0" width="1366" height="728" />
@@ -153,25 +153,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="466" y="121" width="424" height="483" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606306635518" />
-    <state width="1846" height="244" key="GridCell.Tab.0.bottom" timestamp="1606365763076">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="1318" height="162" key="GridCell.Tab.0.bottom" timestamp="1606401532063">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1318" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606310948521" />
+    <state width="1318" height="162" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606401532063" />
     <state width="1846" height="244" key="GridCell.Tab.0.bottom/0.0.1920.1053@0.0.1920.1053" timestamp="1606365763076" />
-    <state width="1846" height="244" key="GridCell.Tab.0.center" timestamp="1606365763076">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="1318" height="162" key="GridCell.Tab.0.center" timestamp="1606401532062">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1318" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606310948520" />
+    <state width="1318" height="162" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606401532062" />
     <state width="1846" height="244" key="GridCell.Tab.0.center/0.0.1920.1053@0.0.1920.1053" timestamp="1606365763076" />
-    <state width="1846" height="244" key="GridCell.Tab.0.left" timestamp="1606365763075">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="1318" height="162" key="GridCell.Tab.0.left" timestamp="1606401532061">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1318" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606310948519" />
+    <state width="1318" height="162" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606401532061" />
     <state width="1846" height="244" key="GridCell.Tab.0.left/0.0.1920.1053@0.0.1920.1053" timestamp="1606365763075" />
-    <state width="1846" height="244" key="GridCell.Tab.0.right" timestamp="1606365763076">
-      <screen x="0" y="0" width="1920" height="1053" />
+    <state width="1318" height="162" key="GridCell.Tab.0.right" timestamp="1606401532062">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1318" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606310948521" />
+    <state width="1318" height="162" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606401532062" />
     <state width="1846" height="244" key="GridCell.Tab.0.right/0.0.1920.1053@0.0.1920.1053" timestamp="1606365763076" />
     <state x="461" y="74" width="434" height="577" key="RollbackChangesDialog" timestamp="1606286824257">
       <screen x="0" y="0" width="1366" height="728" />
