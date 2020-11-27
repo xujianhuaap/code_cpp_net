@@ -1,14 +1,18 @@
 project(client)
 
 add_library(libtools SHARED IMPORTED)
+#set_target_properties(target1 target2 ...
+#                      PROPERTIES prop1 value1
+#                      prop2 value2 ...)
 set_target_properties( libtools
         PROPERTIES IMPORTED_LOCATION ${ARCHIVE_OUTPUT_DIRECTORY}/libtools.so)
 
 add_executable(client main.cpp)
 
 
-
+#
 target_include_directories(client PUBLIC "${CMAKE_ROOT_BINARY_DIR}")
+target_include_directories(client PUBLIC "${PROJECT_INCLUDE_DIR}")
 
 # 添加依赖库
 #target_link_libraries(<target>

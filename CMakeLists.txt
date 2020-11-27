@@ -27,24 +27,17 @@ configure_file(config.h.in config.h @ONLY)
 
 #include_directories([AFTER|BEFORE] [SYSTEM] dir1 [dir2 ...])
 #AFTER 加到结尾　
-include_directories(${PROJECT_INCLUDE_DIR})
+include_directories(src/tools)
 # 由于配置文件config.h 存储在cmake-build-debug 文件中，必须通过include_directories,
 # 其它地方才可以直接使用include<config.h>
 #include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-include_directories(src/tools)
 
-
-message(EXCLUDE_FROM_ALL ${EXCLUDE_FROM_ALL})
 # 添加新的构建路径src
 #add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL])
 # binary_dir 表示构建之后输出文件的目录
+add_subdirectory(src/application)
 add_subdirectory(src/tools)
 add_subdirectory(src/client EXCLUDE_FROM_ALL)
 
-
-add_executable(code_cpp_net WIN32 EXCLUDE_FROM_ALL project.cpp )
-# 和include_directories相比 指定生效的target ;
-target_include_directories(code_cpp_net PUBLIC "${CMAKE_CURRENT_BINARY_DIR}")
-target_link_libraries(code_cpp_net tools)
 
