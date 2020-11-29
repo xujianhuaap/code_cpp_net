@@ -39,5 +39,6 @@ include_directories(src/tools)
 add_subdirectory(src/application)
 add_subdirectory(src/tools)
 add_subdirectory(src/client EXCLUDE_FROM_ALL)
+add_subdirectory(src/server)
 
 

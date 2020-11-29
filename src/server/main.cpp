@@ -8,6 +8,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <string.h>
+#include <Net.h>
 
 static auto stop = false;
 static void handle_term(int sig){
@@ -24,7 +25,8 @@ int main(int argc, char* argv[]) {
     std::cout << "Hello, World!" << std::endl;
     signal(SIGTERM, handle_term);
     if(argc < 3){
-        printf("usage %s ip_address port_number backlog \n",basename(argv[0]));
+        std::string msg= "parameter too less";
+        warning(msg);
         return 1;
     }
 
