@@ -43,15 +43,19 @@ int main(int argc, char* argv[]) {
     inet_pton(AF_INET,ip,&address.sin_addr);
     address.sin_port = htons(port);
 
-    int result = bind(sock,(struct sockaddr*)&address, sizeof(address));
-    assert(result != -1);
+    if(connect(sock,(struct sockaddr*) & address, sizeof(address))< 0){
+        std::string msg = "client failure";
+        warning(msg);
+    } else{
+        const char *oob_data="emergency warning";
+        const char *msg = "hello server";
+        send(sock,msg,strlen(msg),0);
+        send(sock,oob_data,strlen(oob_data),MSG_OOB);
+        send(sock,msg,strlen(msg),0);
 
-    result = listen(sock,backlog);
-    assert(result != -1);
 
-    while (!stop){
-      sleep(1);
     }
+
     close(sock);
     return 0;
 }
