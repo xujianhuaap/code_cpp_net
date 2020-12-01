@@ -38,7 +38,7 @@ include_directories(src/tools)
 # binary_dir 表示构建之后输出文件的目录
 add_subdirectory(src/application)
 add_subdirectory(src/tools)
-add_subdirectory(src/client EXCLUDE_FROM_ALL)
+add_subdirectory(src/client)
 add_subdirectory(src/server)
 
 

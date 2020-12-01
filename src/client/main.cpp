@@ -52,8 +52,6 @@ int main(int argc, char* argv[]) {
         send(sock,msg,strlen(msg),0);
         send(sock,oob_data,strlen(oob_data),MSG_OOB);
         send(sock,msg,strlen(msg),0);
-
-
     }
 
     close(sock);
