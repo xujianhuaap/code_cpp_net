@@ -51,16 +51,19 @@ int main(int argc, char* argv[]) {
     result = listen(sock,backlog);
     assert(result != -1);
 
-
     while (!stop){
         struct sockaddr_in client;
         socklen_t  client_addrLen = sizeof(client);
         int connfd = accept(sock, (struct sockaddr*)&client,&client_addrLen);
 
+
         if(connfd < 0){
             std::string msg ="server accept conn failure";
             warning(msg);
         } else{
+
+            printf("client ip 【%s】, port 【%d】\n",inet_ntoa(client.sin_addr),ntohs(client.sin_port));
+
             printf("accept new connect \n");
             char buffer[BUF_SIZE];
             bool isEndConn {false};
