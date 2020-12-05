@@ -49,9 +49,10 @@ int main(int argc, char* argv[]) {
     } else{
         const char *oob_data="emergency warning";
         const char *msg = "hello server";
+        const char *end= "END";
         send(sock,msg,strlen(msg),0);
-        send(sock,oob_data,strlen(oob_data),MSG_OOB);
-        send(sock,msg,strlen(msg),0);
+//        send(sock,oob_data,strlen(oob_data),MSG_OOB);
+        send(sock,end,strlen(end),0);
     }
 
     close(sock);
