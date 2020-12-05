@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/application.dir/project.cpp.o  -o application -Wl,-rpath,/home/xujianhua/CLionProjects/code_cpp_net/lib ../../lib/libtools.so 

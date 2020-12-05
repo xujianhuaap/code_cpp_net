@@ -1,2 +1,3 @@
 
 #cmakedefine PROJECT_VERSION "@PROJECT_VERSION@"
+#cmakedefine CPPUTEST_HOME "/home/xujianhua/Documents/codes/code_cpp/cpputest-3.8"

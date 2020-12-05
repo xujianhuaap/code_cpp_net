@@ -3,6 +3,7 @@ project(code_cpp_net)
 
 set(PROJECT_VERSION 1.0.1)
 set(CMAKE_CXX_STANDARD 14)
+set(APP_NAME inet)
 
 # 指定输出 .so 动态库的目录位置
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
@@ -40,5 +41,11 @@ add_subdirectory(src/application)
 add_subdirectory(src/tools)
 add_subdirectory(src/client)
 add_subdirectory(src/server)
+
+option(COMPILE_TESTS "Compile the tests" ON)
+if(COMPILE_TESTS)
+    add_subdirectory(test)
+endif(COMPILE_TESTS)
+
 
 

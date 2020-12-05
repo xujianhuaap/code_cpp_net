@@ -1,3 +1,4 @@
 cmake-build-debug/*
 .idea/*
 .idea/workspace.xml
+-DMAKE_BUILD_TYPE=Debug/*
