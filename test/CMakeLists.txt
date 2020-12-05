@@ -1,4 +1,4 @@
-add_subdirectory(inet)
+
 
 if(DEFINED ENV{CPPUTEST_HOME})
     message(STATUS "Using CppUTest home: $ENV{CPPUTEST_HOME}")

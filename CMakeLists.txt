@@ -21,6 +21,7 @@ SET(PROJECT_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 message(PROJECT_INCLUDE_DIR -->，${PROJECT_INCLUDE_DIR})
 
 set(CMAKE_ROOT_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR})
+message(CMAKE_ROOT_BINARY_DIR -->，${CMAKE_ROOT_BINARY_DIR})
 
 #必须在配置变量set之后才能生效
 configure_file(config.h.in config.h @ONLY)

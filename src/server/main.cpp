@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     }
 
     const char*ip = argv[1];
-    int port = atoi(argv[2]);
+    int port = atoi(argv[2]);// 字符串转成整型
     int backlog = atoi(argv[3]);
 
     int sock = socket(PF_INET, SOCK_STREAM,0);
