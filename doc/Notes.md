@@ -14,3 +14,15 @@ extern int inet_pton (int __af, const char *__restrict __cp,
 IP               网络字节字序      主机字节字序
 127.0.0.1         16777343      2130706433
 ```
+#### 20201206
+- GNU C 语言的__attribute__ 机制
+```
+__attribute__ 可以设置函数属性( Function Attribute) 变量属性（Variable Attribute)
+和类型属性（Type Attribute ）。
+
+__attribute__ 语法格式为：__attribute__ ((attribute-list))
+
+关键字__attribute__ 也可以对结构体（struct ）或共用体（union ）进行属性设置。大致有六个参数值可以被设定，即：aligned, packed,
+ transparent_union, unused, deprecated 和 may_alias 。
+
+```

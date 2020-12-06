@@ -16,10 +16,10 @@ TEST_GROUP(INet){
     void setup(){
         ip = "127.0.0.1";
     }
-//
-//    void teardown(){
-//
-//    }
+
+    void teardown(){
+        ip = "";
+    }
 };
 
 TEST(INet,inet_pton){
