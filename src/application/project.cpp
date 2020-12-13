@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <config.h>
-#include <Net.h>
+#include <INet.h>
 
 int main(int argc, char* argv[]){
     std::cout << "hello world Project Version " << PROJECT_VERSION << std::endl;
