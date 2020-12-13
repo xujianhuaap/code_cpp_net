@@ -9,25 +9,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <Net.h>
-#include <errno.h>
-#include <fcntl.h>
+
 
 static auto stop = false;
-static int clientfd = 0;
 static void handle_term(int sig){
     stop = true;
 }
 
-static void urg_handler(int sig) {
-    char buf[30];
-
-    //接受OOB数据, 只能接受最后一个字节, 其他字节作为普通数据接受
-    int n = recv(clientfd, buf, 30, MSG_OOB);
-    printf("oob len : %d\n", n);
-    buf[n] = 0;
-    printf("oob data:%s\n", buf);
-
-}
 
 /***
  *  在IDE run 配置参数
@@ -69,11 +57,7 @@ int main(int argc, char* argv[]) {
         socklen_t  client_addrLen = sizeof(client);
         int connfd = accept(sock, (struct sockaddr*)&client,&client_addrLen);
 
-        clientfd = connfd;
-        printf("current conn %d\n",clientfd);
-//        fcntl(clientfd,F_SETOWN,getpid());
-//        signal(SIGURG,urg_handler);
-
+        printf("current conn %d\n",connfd);
 
         if(connfd < 0){
             std::string msg ="server accept conn failure";
@@ -116,10 +100,6 @@ int main(int argc, char* argv[]) {
 
         sleep(1);
     }
-
-
-
-
 
     close(sock);
     return 0;
