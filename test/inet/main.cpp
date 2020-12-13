@@ -8,6 +8,7 @@
 #include <netdb.h>
 #include "CppUTest/TestHarness.h"
 #include "CppUTest/CommandLineTestRunner.h"
+#include <INet.h>
 
 const char* ip;
 const char* hostName;
@@ -39,33 +40,9 @@ TEST(INet,inet_pton){
 TEST(INet,gethostent){
     printf("\n======== test gethostent ====\n ");
     hostent* host = gethostbyname(hostName);
-    auto host_name = host->h_name;
-    char buf[32]={0};
-    CHECK_TRUE(host_name != NULL);
-    printf("host official name %s\n",host_name);
-
-    for(char **pptr=host->h_aliases;pptr != NULL;pptr ++){
-        if(*pptr == NULL){
-            break;
-        }
-        printf("host entry alias %s\n",*pptr);
-    }
-
-    switch (host->h_addrtype){
-        case AF_INET:
-        case AF_INET6:
-            for(char** pptr1 = host->h_addr_list;pptr1 != NULL, pptr1 ++;){
-                if(*pptr1 == NULL){
-                    printf("host has no addr \n");
-                    break;
-                }
-                printf("host entry address  %s\n",inet_ntoa(*(struct in_addr*) pptr1 ));
-
-            }
-            break;
-    }
-
-    CHECK_EQUAL(4, host->h_length);
+    printHostEntryInfo(host);
+    CHECK_EQUAL(4,host->h_length);
+    CHECK_TRUE(host->h_name != NULL);
 }
 int main(int argumentCount,char** arguments){
     printf("start test for inet\n");

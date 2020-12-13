@@ -19,8 +19,8 @@ include_directories(${PROJECT_INCLUDE_DIR})
 link_directories(${CPPUTEST_LIBRARIES})
 # (4) Build the unit tests objects and link then with the app library
 add_executable(${TEST_APP_NAME} ${TEST_SOURCES})
-target_link_libraries(${TEST_APP_NAME} ${LIBRARY_OUTPUT_PATH} ${CPPUTEST_LDFLAGS})
-
+target_link_libraries(${TEST_APP_NAME} ${CPPUTEST_LDFLAGS})
+target_link_libraries(${TEST_APP_NAME} net)
 # (5) Run the test once the build is done
 add_custom_command(TARGET ${TEST_APP_NAME} COMMAND ./${TEST_APP_NAME} POST_BUILD)
 

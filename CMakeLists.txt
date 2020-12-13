@@ -30,6 +30,7 @@ configure_file(config.h.in config.h @ONLY)
 #include_directories([AFTER|BEFORE] [SYSTEM] dir1 [dir2 ...])
 #AFTER 加到结尾　
 include_directories(src/tools)
+include_directories(src/net)
 # 由于配置文件config.h 存储在cmake-build-debug 文件中，必须通过include_directories,
 # 其它地方才可以直接使用include<config.h>
 #include_directories(${CMAKE_CURRENT_BINARY_DIR})
@@ -42,6 +43,7 @@ add_subdirectory(src/application)
 add_subdirectory(src/tools)
 add_subdirectory(src/client)
 add_subdirectory(src/server)
+add_subdirectory(src/net)
 
 option(COMPILE_TESTS "Compile the tests" ON)
 if(COMPILE_TESTS)
