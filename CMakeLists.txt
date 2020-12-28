@@ -27,6 +27,8 @@ message(CMAKE_ROOT_BINARY_DIR -->，${CMAKE_ROOT_BINARY_DIR})
 configure_file(config.h.in config.h @ONLY)
 
 
+
+
 #include_directories([AFTER|BEFORE] [SYSTEM] dir1 [dir2 ...])
 #AFTER 加到结尾　
 include_directories(src/tools)
@@ -51,4 +53,6 @@ if(COMPILE_TESTS)
 endif(COMPILE_TESTS)
 
 
+include(deb.cmake)
+execute_process(COMMAND sh COMMAND . post.sh COMMAND echo "=========end=======")
 

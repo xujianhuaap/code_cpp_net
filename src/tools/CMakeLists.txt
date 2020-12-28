@@ -11,3 +11,4 @@ add_library(tools SHARED Log.cpp)
 
 install(TARGETS tools DESTINATION lib)
 install(FILES Log.h DESTINATION include)
+
