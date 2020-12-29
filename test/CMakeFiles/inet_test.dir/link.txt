@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/inet_test.dir/inet/main.cpp.o  -o inet_test  -L/home/xujianhua/Documents/codes/code_cpp/cpputest-3.8/lib -Wl,-rpath,/home/xujianhua/Documents/codes/code_cpp/cpputest-3.8/lib -lCppUTest -lCppUTestExt 
+/usr/bin/c++  -g   CMakeFiles/inet_test.dir/inet/main.cpp.o  -o inet_test  -L/home/xujianhua/Documents/codes/code_cpp/cpputest-3.8/lib -Wl,-rpath,/home/xujianhua/Documents/codes/code_cpp/cpputest-3.8/lib:/home/xujianhua/CLionProjects/code_cpp_net/lib -lCppUTest -lCppUTestExt ../lib/libnet.so 

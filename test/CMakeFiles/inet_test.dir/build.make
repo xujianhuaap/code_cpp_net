@@ -79,6 +79,7 @@ inet_test_EXTERNAL_OBJECTS =
 
 test/inet_test: test/CMakeFiles/inet_test.dir/inet/main.cpp.o
 test/inet_test: test/CMakeFiles/inet_test.dir/build.make
+test/inet_test: lib/libnet.so
 test/inet_test: test/CMakeFiles/inet_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xujianhua/CLionProjects/code_cpp_net/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable inet_test"
 	cd /home/xujianhua/CLionProjects/code_cpp_net/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/inet_test.dir/link.txt --verbose=$(VERBOSE)

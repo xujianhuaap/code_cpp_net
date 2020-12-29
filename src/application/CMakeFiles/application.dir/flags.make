@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/xujianhua/CLionProjects/code_cpp_net/src/tools -I/home/xujianhua/CLionProjects/code_cpp_net/include -I/home/xujianhua/CLionProjects/code_cpp_net 
+CXX_INCLUDES = -I/home/xujianhua/CLionProjects/code_cpp_net/src/tools -I/home/xujianhua/CLionProjects/code_cpp_net/src/net -I/home/xujianhua/CLionProjects/code_cpp_net/include -I/home/xujianhua/CLionProjects/code_cpp_net 
 
