@@ -20,7 +20,9 @@ ${cmake_path}/bin/cmake -DCMAKE_BUILD_TYPE=Debug\
    -S ${project_dir}\
    -B ${project_build}
 
-cd ${project_build}
+# generate package and list deb package detail info
 if test -f "${cpack_config_file}";then
+  cd ${project_build}
   make package
+  dpkg-deb -c *.deb
 fi
