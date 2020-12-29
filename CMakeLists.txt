@@ -26,7 +26,7 @@ message(CMAKE_ROOT_BINARY_DIR -->，${CMAKE_ROOT_BINARY_DIR})
 #必须在配置变量set之后才能生效
 configure_file(config.h.in config.h @ONLY)
 
-
+SET(CPACK_POST_BUILD_SCRIPTS "post.sh")
 
 
 #include_directories([AFTER|BEFORE] [SYSTEM] dir1 [dir2 ...])
@@ -54,5 +54,4 @@ endif(COMPILE_TESTS)
 
 
 include(deb.cmake)
-execute_process(COMMAND sh COMMAND . post.sh COMMAND echo "=========end=======")
 

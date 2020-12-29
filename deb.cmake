@@ -7,6 +7,8 @@ set(CPACK_DEB_PACKAGE_GROUP "DEV")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "SkullMind")
 set(CPACK_DEBIAN_PACKAGE_DEPENDS "")
 
+message("deb->" ${CMAKE_CURRENT_SOURCE_DIR})
+
 include(CPack)
 #cpack_add_component_group(DEV)
 #cpack_add_component(tool GROUP DEV)
