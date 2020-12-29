@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.15)
 project(code_cpp_net)
 
 #====================options ======================
-option(COMPILE_TESTS "Compile the tests" OFF)
-option(PACKAGE_DEB "generate deb package" OFF)
+option(COMPILE_TESTS "Compile the tests" ON)
+option(PACKAGE_DEB "generate deb package" ON)
 #=====================options======================
 set(PROJECT_VERSION 1.0.1)
 set(CMAKE_CXX_STANDARD 14)
