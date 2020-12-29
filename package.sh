@@ -4,6 +4,8 @@
 project_dir=/home/xujianhua/CLionProjects/code_cpp_net
 project_build="${project_dir}/build"
 cmake_path=/home/xujianhua/Documents/soft/clion-2019.3.3/bin/cmake/linux/
+cpack_config_file="${project_build}/CPackConfig.cmake"
+cpack_source_config_file="${project_build}/CPackSourceConfig.cmake"
 
 # build project
 ${cmake_path}/bin/cmake -DCMAKE_BUILD_TYPE=Debug\
@@ -13,4 +15,6 @@ ${cmake_path}/bin/cmake -DCMAKE_BUILD_TYPE=Debug\
    -B ${project_build}
 
 cd ${project_build}
-make package
+if test -f "${cpack_config_file}";then
+  make package
+fi
