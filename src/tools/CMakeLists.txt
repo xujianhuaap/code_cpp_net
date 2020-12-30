@@ -1,3 +1,5 @@
+
+
 # 指定生成动态库
 # add_library(<name> [STATIC | SHARED | MODULE]
 #            [EXCLUDE_FROM_ALL]
@@ -9,5 +11,7 @@ add_library(tools SHARED Log.cpp)
 # 指定生成版本号，VERSION指代动态库版本，SOVERSION指代API版本
 # SET_TARGET_PROPERTIES(tools PROPERTIES VERSION 1.2 SOVERSION 1)
 
-install(TARGETS tools DESTINATION lib)
-install(FILES Log.h DESTINATION include)
+if(INSTALL_LIB)
+install(TARGETS tools LIBRARY DESTINATION lib)
+endif(INSTALL_LIB)
+#install(FILES Log.h DESTINATION include)

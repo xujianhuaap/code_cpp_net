@@ -1,1 +1,0 @@
-/usr/bin/c++   -DCOMPILE_TESTS=ON -g   CMakeFiles/INet_test.dir/inet/main.cpp.o  -o INet_test  -L/home/xujianhua/Documents/codes/code_cpp/cpputest-3.8/lib -Wl,-rpath,/home/xujianhua/Documents/codes/code_cpp/cpputest-3.8/lib -lCppUTest -lCppUTestExt 

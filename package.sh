@@ -26,3 +26,7 @@ if test -f "${cpack_config_file}";then
   make package
   dpkg-deb -c *.deb
 fi
+
+sudo rm -rf /usr/local/lib/libnet.so
+sudo rm -rf /usr/local/lib/libtools.so
+sudo make install

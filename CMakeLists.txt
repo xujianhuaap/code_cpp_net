@@ -4,6 +4,7 @@ project(code_cpp_net)
 #====================options ======================
 option(COMPILE_TESTS "Compile the tests" ON)
 option(PACKAGE_DEB "generate deb package" ON)
+option(INSTALL_LIB "install lib " OFF)
 #=====================options======================
 set(PROJECT_VERSION 1.0.1)
 set(CMAKE_CXX_STANDARD 14)
