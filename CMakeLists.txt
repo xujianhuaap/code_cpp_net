@@ -2,9 +2,10 @@ cmake_minimum_required(VERSION 3.15)
 project(code_cpp_net)
 
 #====================options ======================
-option(COMPILE_TESTS "Compile the tests" ON)
-option(PACKAGE_DEB "generate deb package" ON)
-option(INSTALL_LIB "install lib " OFF)
+option(COMPILE_TESTS "Compile the tests" OFF)
+option(PACKAGE_DEB "generate deb package" OFF)
+option(INSTALL_LIB "install lib " ON)
+option(INSTALL_LIB_EXPORT "install lib export target " OFF)
 #=====================options======================
 set(PROJECT_VERSION 1.0.1)
 set(CMAKE_CXX_STANDARD 14)
@@ -58,4 +59,6 @@ endif(COMPILE_TESTS)
 if(PACKAGE_DEB)
     include(deb.cmake)
 endif(PACKAGE_DEB)
+
+include(FindPkgConfig)
 
