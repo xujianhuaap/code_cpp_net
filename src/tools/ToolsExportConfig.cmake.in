@@ -1,0 +1,6 @@
+# 该配置文件主要是为引入该库的第三方工程定义一些常用的变量
+@PACKAGE_INIT@
+set_and_check(CONFIG_PACKAGE_LOCATION "@PACKAGE_CONFIG_PACKAGE_LOCATION@")
+include("${CONFIG_PACKAGE_LOCATION}/ToolsExpTarget.cmake")
+message("--ToolsExpTarget.cmake " "${CONFIG_PACKAGE_LOCATION}/ToolsExpTarget.cmake")
+

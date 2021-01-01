@@ -5,7 +5,7 @@ project(code_cpp_net)
 option(COMPILE_TESTS "Compile the tests" OFF)
 option(PACKAGE_DEB "generate deb package" OFF)
 option(INSTALL_LIB "install lib " ON)
-option(INSTALL_LIB_EXPORT "install lib export target " OFF)
+option(INSTALL_LIB_EXPORT "install lib export target " ON)
 #=====================options======================
 set(PROJECT_VERSION 1.0.1)
 set(CMAKE_CXX_STANDARD 14)
@@ -50,10 +50,8 @@ add_subdirectory(src/tools)
 add_subdirectory(src/client)
 add_subdirectory(src/server)
 add_subdirectory(src/net)
-
-
 if(COMPILE_TESTS)
-    add_subdirectory(test)
+#    add_subdirectory(test)
 endif(COMPILE_TESTS)
 
 if(PACKAGE_DEB)

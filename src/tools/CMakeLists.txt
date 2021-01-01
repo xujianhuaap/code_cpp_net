@@ -16,56 +16,67 @@ add_library(tools SHARED Log.cpp)
  set_property(TARGET tools APPEND
          PROPERTY COMPATIBLE_INTERFACE_STRING Tools_MAJOR_VERSION)
 if(INSTALL_LIB)
+    set(TOOL_LIB_DIR "tools-${Tools_VERSION}")
+#
     include(GenerateExportHeader)
     generate_export_header(tools)
-
-
+    
     install(TARGETS tools EXPORT toolsExpTarget
-            LIBRARY DESTINATION lib
-            INCLUDES DESTINATION include
+            LIBRARY DESTINATION "lib/${TOOL_LIB_DIR}"
+            INCLUDES DESTINATION "include/${TOOL_LIB_DIR}"
             COMPONENT Tools)
     install(FILES Log.h
-            DESTINATION include
+            DESTINATION "include/${TOOL_LIB_DIR}"
             COMPONENT Tools)
 
+    #======================= 生成xxxConfig.cmake 和xxxConfigVersion.cmake================
+    set(DIR_LIB "lib/${TOOL_LIB_DIR}")
+    set(DIR_INCLUDE "include/${TOOL_LIB_DIR}")
     include(CMakePackageConfigHelpers)
     configure_package_config_file(ToolsConfig.cmake.in ToolsConfig.cmake
-            INSTALL_DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+            INSTALL_DESTINATION "${CMAKE_CURRENT_BINARY_DIR}"
+            PATH_VARS DIR_LIB DIR_INCLUDE)
+
     write_basic_package_version_file(
             "${CMAKE_CURRENT_BINARY_DIR}/ToolsConfigVersion.cmake"
             VERSION ${Tools_VERSION}
-            COMPATIBILITY SameMajorVersion
-    )
+            COMPATIBILITY SameMajorVersion)
+    #======================= 生成xxxConfig.cmake 和xxxConfigVersion.cmake================
 
-
-    # 注册 Tools包
+    # 注册 Tools包到~/.cmake/packages/xxxxx
     set(CMAKE_EXPORT_PACKAGE_REGISTRY true)
-    export(PACKAGE Tools)
-    if(INSTALL_LIB_EXPORT)
+    export(PACKAGE Tools )
 
+    if(INSTALL_LIB_EXPORT)
+        set(ConfigPackageLocation lib/cmake/skull_mind)
+        set(CONFIG_PACKAGE_LOCATION ${ConfigPackageLocation})
+        configure_package_config_file(ToolsExportConfig.cmake.in ToolsExportConfig.cmake
+                INSTALL_DESTINATION "${CMAKE_CURRENT_BINARY_DIR}"
+                PATH_VARS  CONFIG_PACKAGE_LOCATION)
+        write_basic_package_version_file(
+                "${CMAKE_CURRENT_BINARY_DIR}/ToolsExportConfigVersion.cmake"
+                VERSION ${Tools_VERSION}
+                COMPATIBILITY SameMajorVersion)
         #    toolsExpTarget 永远不应该被安装，只是用于外部工程调用
         export(EXPORT toolsExpTarget
                 FILE "${CMAKE_CURRENT_BINARY_DIR}/skull_mind/ToolsExpTarget.cmake"
                 NAMESPACE SkullMind::
                 )
-        message("--CMAKE_CURRENT_BINARY_DIR" ${CMAKE_CURRENT_BINARY_DIR})
 
-        set(ConfigPackageLocation lib/cmake/skull_mind)
-
+        #
         install(EXPORT toolsExpTarget
                 FILE ToolsExpTarget.cmake
                 NAMESPACE SkullMind::
                 DESTINATION ${ConfigPackageLocation})
 
-        #    安装config和configVersion文件到安装路径
-        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/ToolsConfig.cmake"
-                "${CMAKE_CURRENT_BINARY_DIR}/ToolsConfigVersion.cmake"
+        # 安装config和configVersion文件到安装路径
+        install(FILES "${CMAKE_CURRENT_BINARY_DIR}/ToolsExportConfig.cmake"
+                "${CMAKE_CURRENT_BINARY_DIR}/ToolsExportConfigVersion.cmake"
                 DESTINATION ${ConfigPackageLocation}
-                COMPONENT Tools
-                )
+                COMPONENT Tools)
 
-        # 注册 Tools包
+        # 注册 ToolsExport包
         set(CMAKE_EXPORT_PACKAGE_REGISTRY true)
-        export( PACKAGE Tools )
+        export( PACKAGE ToolsExport )
     endif(INSTALL_LIB_EXPORT)
 endif(INSTALL_LIB)
