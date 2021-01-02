@@ -51,7 +51,7 @@ add_subdirectory(src/client)
 add_subdirectory(src/server)
 add_subdirectory(src/net)
 if(COMPILE_TESTS)
-#    add_subdirectory(test)
+    add_subdirectory(test)
 endif(COMPILE_TESTS)
 
 if(PACKAGE_DEB)

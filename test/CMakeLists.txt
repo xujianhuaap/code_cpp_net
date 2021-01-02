@@ -14,10 +14,14 @@
 find_package(PkgConfig 0.29.1 REQUIRED MODULE)
 message("-- CMAKE_MODULE_PATH " ${CMAKE_MODULE_PATH})
 message("-- is installed PkgConfig " ${PkgConfig_FOUND})
-pkg_search_module(CPPUTEST REQUIRED cpputest>=3.8)
+pkg_check_modules(CPPUTEST REQUIRED cpputest>=3.8)
 message(STATUS "Found CppUTest version ${CPPUTEST_VERSION}")
-
-
+message("--TEST_FOUND " ${CPPUTEST_FOUND})
+message("--TEST_VERSION " ${CPPUTEST_VERSION} )
+message("--TEST_LIBRARIES " ${CPPUTEST_LIBRARIES} )
+message("--TEST_LIBRARY_DIRS " ${CPPUTEST_LIBRARY_DIRS} )
+message("--TEST__INCLUDE_DIRS " ${CPPUTEST_INCLUDE_DIRS} )
+message("--TEST_LINK_LIBRARIES " ${CPPUTEST_LINK_LIBRARIES} )
 
 set(TEST_APP_NAME ${APP_NAME}_test)
 set(TEST_SOURCES inet/main.cpp)
