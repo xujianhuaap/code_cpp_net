@@ -8,7 +8,3 @@ set(NET_LIBRARIES "${DIR_LIB}/libnet.so")
 message("--NET_LIBRARIES " "${DIR_LIB}/libnet.so")
 
 set(Net_FOUND true)
-include("${DIR_LIB}/NetTarget.cmake")
-message("--Net.cmake" "${DIR_LIB}/NetTarget.cmake")
-set(Net_LIBRARIES Net)
-check_required_components(Net)

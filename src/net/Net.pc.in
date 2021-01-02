@@ -9,4 +9,4 @@ URL:  git@github.com:xujianhuaap/code_cpp_net.git
 Description: Net for Linux program
 Version: @PACKAGE_VERSION@
 Cflags: -I${includedir}
-Libs: -L${libdir} -lNet
+Libs: -L${libdir} -lnet -lNetTarget

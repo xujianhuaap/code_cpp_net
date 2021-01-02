@@ -62,18 +62,16 @@ if(INSTALL_LIB)
     #=========================config package=================================================
 
     install(TARGETS net EXPORT NetTarget
+            RUNTIME DESTINATION "bin/${Net_LIB_DIR}"
             LIBRARY DESTINATION ${ConfigPackageLocation}
-            INCLUDES DESTINATION "include/${Net_LIB_DIR}"
+            ARCHIVE DESTINATION ${ConfigPackageLocation}
             )
-    export(EXPORT NetTarget
-            FILE "${CMAKE_CURRENT_BINARY_DIR}/NetTarget.cmake"
-            NAMESPACE SkullMind::
-            )
+    export(TARGETS net
+            FILE "${CMAKE_CURRENT_BINARY_DIR}/NetTarget.cmake")
 
     #
     install(EXPORT NetTarget
             FILE NetTarget.cmake
-            NAMESPACE SkullMind::
             DESTINATION ${ConfigPackageLocation})
 
     install(FILES Net.h
