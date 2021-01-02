@@ -1,0 +1,14 @@
+# 该配置文件主要是为引入该库的第三方工程定义一些常用的变量
+@PACKAGE_INIT@
+set_and_check(DIR_LIB "@PACKAGE_DIR_LIB@")
+set_and_check(DIR_INCLUDE "@PACKAGE_DIR_INCLUDE@")
+set(NET_INCLUDE_DIRS ${DIR_INCLUDE})
+message("--NET_INCLUDE_DIRS " "${DIR_INCLUDE}")
+set(NET_LIBRARIES "${DIR_LIB}/libnet.so")
+message("--NET_LIBRARIES " "${DIR_LIB}/libnet.so")
+
+set(Net_FOUND true)
+include("${DIR_LIB}/NetTarget.cmake")
+message("--Net.cmake" "${DIR_LIB}/NetTarget.cmake")
+set(Net_LIBRARIES Net)
+check_required_components(Net)

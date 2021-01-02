@@ -2,7 +2,11 @@
 @PACKAGE_INIT@
 set_and_check(DIR_LIB "@PACKAGE_DIR_LIB@")
 set_and_check(DIR_INCLUDE "@PACKAGE_DIR_INCLUDE@")
+
 set(Tools_INCLUDE_DIRS ${DIR_INCLUDE})
-message("--Tools_INCLUDE_DIRS " "/usr/local/include/${DIR_INCLUDE}")
+message("--Tools_INCLUDE_DIRS " "${DIR_INCLUDE}")
+
 set(Tools_LIBRARIES "${DIR_LIB}/libtools.so")
-message("--Tools_LIBRARIES " "/usr/local/lib/${DIR_LIB}/libtools.so")
+message("--Tools_LIBRARIES " "${DIR_LIB}/libtools.so")
+
+set(Tools_FOUND true)

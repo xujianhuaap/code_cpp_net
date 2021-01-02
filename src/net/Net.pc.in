@@ -1,0 +1,12 @@
+# pkg-config 配置文件，以便生成.pc配置文件，供pkg_search_module()或者pkg_check_modules()使用
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: Net
+URL:  git@github.com:xujianhuaap/code_cpp_net.git
+Description: Net for Linux program
+Version: @PACKAGE_VERSION@
+Cflags: -I${includedir}
+Libs: -L${libdir} -lNet
