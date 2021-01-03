@@ -28,6 +28,19 @@ if test -f "${cpack_config_file}";then
   dpkg-deb -c *.deb
 fi
 
+# add share library path
+echo "---- add share library path---"
+matchTarget=/usr/local/lib
+matchStr=$(grep -i "${matchTarget}" /etc/ld.so.conf -o)
+if test -z "${matchStr}";
+then
+  echo "append ${matchTarget} to /etc/ld.so.conf"
+  sudo sh  -c "echo ${matchTarget} >> /etc/ld.so.conf"
+else
+  echo "${matchStr}"
+fi
+sudo ldconfig
+echo "---- add share library path ${count}---"
 # install system
 # delete old lib target
 for f in "${project_lib}"/*.so

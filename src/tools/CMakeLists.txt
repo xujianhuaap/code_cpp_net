@@ -17,14 +17,14 @@ add_library(tools SHARED Log.cpp)
          PROPERTY COMPATIBLE_INTERFACE_STRING Tools_MAJOR_VERSION)
 
 if(INSTALL_LIB)
-    set(TOOL_LIB_DIR "tools-${Tools_VERSION}")
+    set(TOOL_VERSION_DIR "tools-${Tools_VERSION}")
 #
     include(GenerateExportHeader)
     generate_export_header(tools)
     if(INSTALL_LIB_EXPORT)
         #======================= 生成xxxConfig.cmake 和xxxConfigVersion.cmake================
         include(CMakePackageConfigHelpers)
-        set(ConfigPackageLocation lib)
+        set(ConfigPackageLocation "lib/${TOOL_VERSION_DIR}")
         set(CONFIG_PACKAGE_LOCATION ${ConfigPackageLocation})
         configure_package_config_file(ToolsTargetConfig.cmake.in ToolsTargetConfig.cmake
                 INSTALL_DESTINATION "${CMAKE_CURRENT_BINARY_DIR}"
@@ -41,25 +41,25 @@ if(INSTALL_LIB)
 
         #======================================== install target or IMPORTED_target==================
         install(TARGETS tools EXPORT ToolsTarget
-                LIBRARY DESTINATION "lib/${TOOL_LIB_DIR}"
-                INCLUDES DESTINATION "include/${TOOL_LIB_DIR}")
+                LIBRARY DESTINATION lib
+                INCLUDES DESTINATION "include/${TOOL_VERSION_DIR}")
 
         # 安装生成IMPORTED_TARGET的.cmake文件到安装路径
         install(EXPORT ToolsTarget
-                FILE "ToolsTarget-${Tools_VERSION}.cmake"
+                FILE "ToolsTarget.cmake"
                 DESTINATION ${ConfigPackageLocation})
 
 
 
         install(FILES Log.h
-                DESTINATION "include/${TOOL_LIB_DIR}")
+                DESTINATION "include/${TOOL_VERSION_DIR}")
 
         # ToolsTarget.cmake 在build 目录下面对应的路径永远不应该被安装，只是用于外部工程调用;
         export(TARGETS tools
                 FILE "${CMAKE_CURRENT_BINARY_DIR}/ToolsTarget.cmake")
         #==================================== 注册 ToolsExport包=====================================
         set(CMAKE_EXPORT_PACKAGE_REGISTRY true)
-        export( PACKAGE ToolsExport )
+        export( PACKAGE ToolsTarget )
         #==================================== 注册 ToolsExport包=====================================
     endif(INSTALL_LIB_EXPORT)
 endif(INSTALL_LIB)

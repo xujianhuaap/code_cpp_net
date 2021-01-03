@@ -1,0 +1,1 @@
+message("-- install post script: " "net so path")
