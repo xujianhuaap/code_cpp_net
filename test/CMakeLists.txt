@@ -32,6 +32,7 @@ link_directories(${CPPUTEST_LIBRARIES})
 # (4) Build the unit tests objects and link then with the app library
 add_executable(${TEST_APP_NAME} ${TEST_SOURCES})
 target_link_libraries(${TEST_APP_NAME} ${CPPUTEST_LDFLAGS})
+message("--CPPUTEST_LDFLAGS" "${CPPUTEST_LDFLAGS}")
 target_link_libraries(${TEST_APP_NAME} net)
 # (5) Run the test once the build is done
 add_custom_command(TARGET ${TEST_APP_NAME} COMMAND ./${TEST_APP_NAME} POST_BUILD)

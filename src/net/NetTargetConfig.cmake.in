@@ -1,5 +1,9 @@
 # 该配置文件主要是为引入该库的第三方工程定义一些常用的变量
 @PACKAGE_INIT@
-set_and_check(CONFIG_PACKAGE_LOCATION "@PACKAGE_CONFIG_PACKAGE_LOCATION@")
-include("${CONFIG_PACKAGE_LOCATION}/NetTarget.cmake")
-message("--NetTarget.cmake " "${CONFIG_PACKAGE_LOCATION}/NetTarget.cmake")
+set_and_check(NetTarget_INCLUDE_DIRS "@PACKAGE_INCLUDE_INSTALL_DIR@")
+
+include("${CMAKE_CURRENT_LIST_DIR}/NetTarget.cmake")
+message("--NetTarget.cmake " "${CMAKE_CURRENT_LIST_DIR}/NetTarget.cmake")
+
+set(NetTarget_LIBRARIES net)
+check_required_components(NetTarget)

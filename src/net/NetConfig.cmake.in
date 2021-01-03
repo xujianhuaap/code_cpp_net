@@ -5,6 +5,6 @@ set_and_check(DIR_INCLUDE "@PACKAGE_DIR_INCLUDE@")
 set(NET_INCLUDE_DIRS ${DIR_INCLUDE})
 message("--NET_INCLUDE_DIRS " "${DIR_INCLUDE}")
 set(NET_LIBRARIES "${DIR_LIB}/libnet.so")
-message("--NET_LIBRARIES " "${DIR_LIB}/libnet.so")
+message("--NET_LIBRARIES " "${DIR_LIB}/libnet.so.1.0.1")
 
 set(Net_FOUND true)
