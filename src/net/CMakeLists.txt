@@ -62,25 +62,29 @@ if(INSTALL_LIB)
     endif(PkgHelpers_AVAILABLE)
     #=========================config package=================================================
 
+    #========================== install target or import_target================================
     install(TARGETS net EXPORT NetTarget
             RUNTIME DESTINATION "bin/${Net_VERSION_DIR}"
             LIBRARY DESTINATION ${ConfigPackageLocation}
-            ARCHIVE DESTINATION ${ConfigPackageLocation}
-            )
+            ARCHIVE DESTINATION ${ConfigPackageLocation})
+    # 在安装的路径下创建（/usr/local/lib)创建.cmake文件
+    install(EXPORT NetTarget
+            FILE "NetTarget-${Net_VERSION}.cmake"
+            DESTINATION ${ConfigPackageLocation})
 
+    #在对应的build路径下面创建.cmake文件，该文件不能用于安装；只是为了第三方工程编译使用
     export(TARGETS net
             FILE "${CMAKE_CURRENT_BINARY_DIR}/NetTarget.cmake")
 
-    #
-    install(EXPORT NetTarget
-            FILE NetTarget.cmake
-            DESTINATION ${ConfigPackageLocation})
+
 
     install(FILES Net.h
             DESTINATION "include/${Net_VERSION_DIR}")
+    #========================== install target or import_target================================
 
-    # 注册 Tools包到~/.cmake/packages/xxxxx
+    # ========================注册 Tools包到~/.cmake/packages/xxxxx=============================
     set(CMAKE_EXPORT_PACKAGE_REGISTRY true)
     export(PACKAGE Net )
     export(PACKAGE NetTarget )
+    # ========================注册 Tools包到~/.cmake/packages/xxxxx=============================
 endif(INSTALL_LIB)
