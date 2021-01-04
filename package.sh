@@ -1,10 +1,23 @@
 #!/bin/bash
-
+while getopts ":p:c:" opt
+do
+    case $opt in
+        p)
+        echo "project_dir --> $OPTARG"
+        project_dir="$OPTARG"
+        ;;
+         c)
+        echo "cmake_path --> $OPTARG"
+        cmake_path="$OPTARG"
+        ;;
+        ?)
+        echo "未知参数"
+        exit 1;;
+    esac
+done
 # init data
-project_dir=/home/xujianhua/CLionProjects/code_cpp_net
 project_build="${project_dir}/build"
 project_lib="${project_dir}/lib"
-cmake_path=/home/xujianhua/Documents/soft/clion-2019.3.3/bin/cmake/linux/
 cpack_config_file="${project_build}/CPackConfig.cmake"
 cpack_source_config_file="${project_build}/CPackSourceConfig.cmake"
 
@@ -15,7 +28,7 @@ if test -d "${project_build}";then
 fi
 
 # build project
-${cmake_path}/bin/cmake -DCMAKE_BUILD_TYPE=Debug\
+${cmake_path} -DCMAKE_BUILD_TYPE=Debug\
   -DMAKE_BUILD_TYPE=Debug -DCOMPILE_TESTS=ON\
    -G "CodeBlocks - Unix Makefiles"\
    -S ${project_dir}\
@@ -43,15 +56,16 @@ sudo ldconfig
 echo "---- add share library path ${count}---"
 # install system
 # delete old lib target
-for f in "${project_lib}"/*.so
+for f in "${project_lib}"
 do
   fName=$(basename "${f}")
+  echo "current project lib-->${fName}"
   for libF in /usr/local/lib/*.so
    do
     innerFName=$(basename "${libF}")
-      echo "${innerFName}"
+      echo "usr/local/lib-->${innerFName}"
     if [ "${fName}" == "${innerFName}" ];then
-      echo "${libF}"
+      echo "usr/local/lib===> ${libF}"
       sudo rm -rf "${libF}"
       fi
   done
