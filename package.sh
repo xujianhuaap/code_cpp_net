@@ -1,4 +1,5 @@
 #!/bin/bash
+#初始化传入参数
 while getopts ":p:c:" opt
 do
     case $opt in
@@ -63,9 +64,9 @@ do
   for libF in /usr/local/lib/*.so
    do
     innerFName=$(basename "${libF}")
-      echo "usr/local/lib-->${innerFName}"
+
     if [ "${fName}" == "${innerFName}" ];then
-      echo "usr/local/lib===> ${libF}"
+      echo "usr/local/lib ===> ${libF} will be deleted"
       sudo rm -rf "${libF}"
       fi
   done

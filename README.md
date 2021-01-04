@@ -20,3 +20,11 @@
 
 ### 构建说明
 - 始终要考虑是库，还是应用
+
+### build->install script
+```
+./package.sh \
+    -p  /home/xu/Documents/codes/codes_c/code_cpp_net \
+     -c /home/xu/Documents/soft/clion-2019.3.1/bin/cmake/linux/bin/cmake 
+```
+
