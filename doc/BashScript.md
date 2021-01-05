@@ -1,10 +1,83 @@
 ### BashScript
 
-#### <ol>getOpts
+#### <ol> special char
+```
+1. '.'代表是任意单个字符；　
+    '*'代表是通配符号，echo * 表示打印当前目录下所有的文件
+    '?' 用于三元运算符号；　：　${username?} 这里的问号（username与？之间不能有空格）用于判断变量是否赋值，若没赋值则打印错误
+2. ‘，’可以用来连接字符串　example: if file in ${,/usr}/bin 表示/bin 或者/usr/bin 目录下
+3. '`' 命令替换符号　`command`可以将命令结果赋值给变量
+4. ':' 可以表示空命令　该命令默认返回为true  example
+            while : 
+            do
+            ...
+            done
+        这里while : 等同于　while true;
+        if condition ; then :
+        else
+        ....
+        fi
+        这里的then : 相当于占位符不做任何操作
+        ： ${username=`whoami`}
+        这里的：只是占位，不然会报错
+        ：　> test.txt 清空test.txt文件，若该文件不存在则创建
+        ：　>> test.txt 不会清空文件若文件不存在则创建
+        PATH=/usr/bin:$PATH 这里：作为域的分割符号
+5. '$$' 表示脚本运行进程Id
+    $* $@ 表示位置参数，在没有双引号的时候二者一样，但被双引号包括的时候二者有区别
+        ./test.sh a b c
+        test.sh 脚本如下
+        for var in "$*"
+            echo $var //打印的内容为　a b c
+        for var in "$@"
+            echo $var 
+        //打印内容为　ａ
+                    b
+                    c
+        可见在$* 是把所有的输入参数作为一个整体　$@是把输入的参数依次取出
+    　$? 该变量保存一个命令，脚本，函数执行完毕的状态
+6. () 命令组　会开启一个子shell,在子shell中的变量当前shell无法访问
+   例如　a=3
+        (a=2;)
+        echo $a //仍然是３
+   ()可以用于初始化数组
+    arr=(1,2,3)
+7.{xxx,yyy} 用于扩展文件结构
+    echo *.{txt,sh,doc}
+ {n..m}//表示n-m之间的所有数字或者字母，包括ｎ和m
+ {} 代码块，实质是一个匿名函数
+    a=3
+    {a=4}
+    echo $a //打印出４
+ {}也可以作为占位符号，在xargs -i 后面作为占位符号使用
 
-```$xslt
 
-    
+8.　[] 是test的组成部分，[]之间是test的表达式
+    if test -f file 等同于　if　[ -f file]
+    [a-z]表示a-z范围内的任意字符
+    $[] 整数扩展符号
+        a=3
+        b=4
+        $[$a+$b]//7
+9. scriptName > fileName 将脚本重定向输出到文件fileName 并且覆盖以前内容，文件不存在将创建新的文件
+  　scriptName >> fileName 将脚本追加到文件fileName 文件不存在创建新的文件
+    command &> fileName 将命令返回内容输出到文件fileName 并且覆盖以前内容，文件不存在将创建新的文件
+    command &>> fileName
+    command >&2 将命令输出到错误输出
+
+10. << 表示here-document
+
+11. command & 表示该命令转至后台进行
+12. - 表示短选项　netstat -ant
+    cat - 这里表示从标准输入读取内容
+    cd - 表示回到以前的工作目录
+13. ~+当前工作目录
+    ~-上一个工作目录
+
+```
+#### <li>getOpts
+
+```
 getOpts optstring name [arg]
 
 该命令用于解析位置参数作为选项；例如./xxx.sh -d xujianhua -c /usr/local/lib；
