@@ -222,5 +222,11 @@ read 从标准输入或者键盘读取变量
 -t //超时限制以秒为单位
 -u fd//从文件中读取
 ```
+
+#### <li> eval
+```
+eval 将一个字符串转化成命令
+example: script="echo hello" \ eval $script
+```
    
   
