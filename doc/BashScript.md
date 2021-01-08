@@ -116,5 +116,38 @@ grep -o xujianhua ./test.txt
 如果有匹配到的返回0，没有匹配到返回1；在发生错误的时候 -q没有设置的情况下，返回状态码2；
 
 ```
+
+#### <li> tr
+```
+tr [options] set1 [set2]
+将标准输入翻译后再标准输出
+example:
+echo "xujianhua"| tr a-z A-Z //将小写转化成大写
+
+
+```
+
+####  <li> echo and printf
+```
+echo 打印表达式或者命令到标准输出
+    -n 不输出换行
+    -e 支持反斜杠 echo -e 'xu \n'
+    -E 不反斜杠
+echo command // echo 会删除command中的换行
+
+printf
+    printf("%s ,hello","xu")
+```
+#### <li> read
+```
+read 从标准输入或者键盘读取变量
+-d //结束字符 example: read -d e 表示遇到字母e就结束
+-p //提示语  example read -p "your name:" user_name
+-n //长度限制
+-N //长度限制忽略 -d选项的作用
+-s //不打印输入内容
+-t //超时限制以秒为单位
+-u fd//从文件中读取
+```
    
   
