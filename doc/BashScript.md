@@ -228,5 +228,80 @@ read 从标准输入或者键盘读取变量
 eval 将一个字符串转化成命令
 example: script="echo hello" \ eval $script
 ```
+
+#### <li> exec
+```
+该内建的shell,将会用指定的命令替代但当前的进程；
+当我们执行一个脚本便会fork一个子进程，来执行一系列的命令；
+如果在脚本中使用exec，shell不会fork进程，会替代该shell,执行完exec所指定的命令，便会终止shell;
+```
+
+#### <li> shopt set
+```
+set 用于设置/关闭shell选项和位置参数；改变shell选项和位置参数的值或者展示shell变量的name和值；
+
+set [-abefhkmnptuxBCHP] [-o optname] [--] [arg...]
+
+-a 标记该要创建或者修改的变量用于export
+-b 通知一个任务立即结束
+-e 在一个现存的命令返回状态不是0，直接退出；但是对于管道命令会失效，管道命令只要最后一个命令成功，就相当于整个命令成功
+-f 禁用生成文件名称通配符
+-n 读取命令而不执行命令
+-u 如果是未设置变量就报错
+-x 打印执行的命令和参数，并且以+开头
+-v  打印读取的输入行
+-p 实际的和有效的用户UID不匹配的时候就打开，不能使用$ENV 和 shell function；关闭的时候有效的UID和GID设置到实际的UID和GID
+-t 读取和执行一个命令后结束脚本
+-k 所有的赋值的arg 放在环境中而不只是处理的命令中
+-m JOB是可以控制的
+-h 记得执行命令的位置
+-B  shell会执行花括号扩展
+-C 正常的文件不允许重定向输出修改
+-E ERR捕获继承shell function
+-P 不处理符号链接
+-T DEBUG 和 RETURN 捕获继承于shell function
+-- 赋值不是shell变量的arg 为位置参数
+- 赋值不是shell变量的arg 为位置参数 -x和-v选项关闭
+-o optname 设置选项
+    allexport 相当于 -a
+    braceexpand 相当于 -B
+    errexit 相当于 -e
+    pipefail 只要一个管道的子命令出错整个命令都会出错
+    nounset 相当于 -u
+    keyword 相当于 -k
+    noglob 相当于 -f
+    notify 相当于 -b
+    xtrace 相当于 -x
+    monitor 相当于 -m
+    onecmd 相当于 -t
+    noexec 相当于 -n
+    privileged 相当与 -p
+    hashall 相当于 -h
+    pyhical 相当于 -P
+    noclobber 相当于 -C
+    functrace 相当于 -T
+
+     
+      -p  Turned on whenever the real and effective user ids do not match.
+          Disables processing of the $ENV file and importing of shell
+          functions.  Turning this option off causes the effective uid and
+          gid to be set to the real uid and gid.
+
+ 
+
+
+  
+    
+shopt [-pqsu][-o][optname ...]
+设置或者取消设置 shell选项；如果没有optname,则列出所有的shell option;
+
+-o 筛选optname是通过set -o optname打开的选项
+-p 打印每一个shell选项，并且包含每一个选项的状态
+-s optname选项是可用的
+-u optname选项是不可用的
+
+如果optname选项可用返回 true;如果是无效的选项或者optname选项是不可用的返回false;
+
+```
    
   
