@@ -339,5 +339,24 @@ expression 由options，tests,actions组成,通过操作符号分割
 
 
 ```
+
+#### <li> host
+```
+host 用于DNS解析
+host [-aCdlnrsTwv] [-c class] [-N ndots] [-R number] [-t type] [-W wait] [-m flag] [-4] [-6] {name} [server]
+
+nslookup 查询hostname
+
+```
+#### <li> xargs
+
+```
+xargs [options ]command [initial-parameter]
+command 省略情况下是echo;
+xargs 给命令传参数的一个过滤器；该命令会从标准输入中逐项读取item;一般情况下按行或者空格分割，根据item的次数执行command一次或者多次
+echo "a b c d"|xargs -n1  表示每次命令使用的参数一个参数
+-a file
+-0 ,--null 以null为分割而不是空格
+```
    
   
