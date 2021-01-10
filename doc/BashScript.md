@@ -281,17 +281,6 @@ set [-abefhkmnptuxBCHP] [-o optname] [--] [arg...]
     noclobber 相当于 -C
     functrace 相当于 -T
 
-     
-      -p  Turned on whenever the real and effective user ids do not match.
-          Disables processing of the $ENV file and importing of shell
-          functions.  Turning this option off causes the effective uid and
-          gid to be set to the real uid and gid.
-
- 
-
-
-  
-    
 shopt [-pqsu][-o][optname ...]
 设置或者取消设置 shell选项；如果没有optname,则列出所有的shell option;
 
@@ -301,6 +290,53 @@ shopt [-pqsu][-o][optname ...]
 -u optname选项是不可用的
 
 如果optname选项可用返回 true;如果是无效的选项或者optname选项是不可用的返回false;
+
+```
+
+#### <li> find
+```
+find 在目录树下搜索文件
+find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]
+
+find 若路径starting-point没有指定则是当前路径；
+
+# -P -H -L 负责处理链接符号
+-P 没有符号链接相跟随；当匹配文件和打印文件信息的时候如果是符号链接，则打印符号链接自身
+-H 
+-L 当匹配文件和打印文件信息的时候，应该是链接指向文件的信息而不是链接自身的；会导致-lname 和 -ilname 返回false
+
+-D debugopt 打印诊断信息，有利于找到不是自己想要的结果的原因:主要包括一下选项，通过','分割可以选择多个选项：
+    exec
+    help
+    opt
+    time
+    tree
+-Olevel 优化查询的等级；find 可以重新排序test，以加快查询；
+    0 或1 是一个等级；表达式会重新排序以便基于-name 和 -regex的test先执行；系统默认的等级
+    2；基于-name 和 -regex的test执行完之后，再执行-type 和-xtype 测试，但是-type和-xtypetest必须在需要innode信息的test之前；
+    3；基于优化成本进行表达式重新排序；
+
+expression 由options，tests,actions组成,通过操作符号分割
+    options
+        -d 等同于 -depth 搜索深度
+        -daystart 
+    tests
+        +n 大于n -n表示小于n
+        -amin +9//访问时间已经过去9分钟
+        -atime +2//访问时间2天以前
+        -name
+    actions
+        -delete
+        -exec command //-exec echo {} \;
+            {} 表示占位符号，表示find命令筛选出的文件，\;转义之后的分号表示在这之前的参数是command的而不是find 的
+        -ok command // 同exec 只是先询问用户再执行命令
+        -execdir command
+        -execdir command {}+
+            和-exec 一样但是执行命令是在匹配的文件所在的目录；+标识着会处理匹配到的不止一个文件，会列出同一个目录中的所有文件；
+        -fprint file //打印匹配到的文件名称输出到file
+        -print //打印匹配到的文件到标准输出
+
+
 
 ```
    
