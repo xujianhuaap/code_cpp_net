@@ -358,5 +358,22 @@ echo "a b c d"|xargs -n1  表示每次命令使用的参数一个参数
 -a file
 -0 ,--null 以null为分割而不是空格
 ```
+
+#### <li> shutdown
+```
+shutdown 关闭或者重启系统；要考虑后台是否有任务，文件是否已经sync,关闭的时机；有重启，断电，halt三种
+shutdown [optins...] [time] [wall...]
+常用选项
+-H 以halt方式关闭系统，将系统服务停掉后立即关机
+-P 以power-off方式关闭系统，关机后切断电源
+-r 以重启方式关闭系统 在系统服务都停掉后就重启
+-c 取消关闭系统任务
+-f 重启后强制略过fsck磁盘检查
+-F 重启后强制进行fsck磁盘检查
+-k 提示信息
+-h 等同于power-off
+
+time 可以是now +4(4分钟之后）
+```
    
   
